@@ -46,7 +46,10 @@ namespace AmongUsModUpdater.UpdaterFunctions
         }
         public static void cancelAutomatedSearch()
         {
-            automatedSearch.cancelAsyncWorker();
+            if (automatedSearch is not null) 
+            {
+                automatedSearch.cancelAsyncWorker();
+            }
         }
         public static void startQuickSearch(dynamic mainWindow)
         {
@@ -55,7 +58,10 @@ namespace AmongUsModUpdater.UpdaterFunctions
         }
         public static void cancelQuickSearch()
         {
-            quickSearch.cancelAsyncWorker();
+            if (quickSearch is not null) 
+            {
+                quickSearch.cancelAsyncWorker();
+            }
         }
         public static async Task<bool> copyFolder(string sourceFolder, string destFolder)
         {
